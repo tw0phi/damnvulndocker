@@ -16,7 +16,7 @@ ENV APACHE_RUN_GROUP www-data
 ENV APACHE_PID_FILE /var/run/apache2/apache2.pid
 ENV APACHE_LOG_DIR /var/log/apache2
 
-RUN apt-get install -y python3
+RUN apt-get install -y python
 
 EXPOSE 80
 
