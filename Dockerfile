@@ -7,11 +7,12 @@ RUN apt-get update \
 
 RUN useradd -rm -d /home/pentest -s /bin/bash -g root -G sudo -u 1001 pentest
 RUN echo 'pentest:F00b4r_1234!' | chpasswd
-RUN chown -R pentest:sudo /var/www/html
+
+RUN chown -R www-data:www-data /var/www/html
 ENV LANG en_US.utf8
 ENV APACHE_RUN_DIR /var/run/apache2
-ENV APACHE_RUN_USER pentest
-ENV APACHE_RUN_GROUP pentest
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
 ENV APACHE_PID_FILE /var/run/apache2/apache2.pid
 ENV APACHE_LOG_DIR /var/log/apache2
 
