@@ -5,7 +5,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 
-RUN useradd -rm -d /home/pentest -s /bin/bash -g root -G sudo -u 1000 pentest
+RUN useradd -rm -d /home/pentest -s /bin/bash -g root -G pentest,sudo -u 1001 pentest
 RUN echo 'pentest:F00b4r_1234!' | chpasswd
 RUN chown -R pentest:pentest /var/www/html
 ENV LANG en_US.utf8
